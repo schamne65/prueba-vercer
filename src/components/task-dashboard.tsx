@@ -62,9 +62,11 @@ export function TaskDashboard() {
     setIsAddingTask(false)
   }
 
-  const handleEditTask = (updatedTask: Task) => {
-    setTasks(tasks.map((task) => (task.id === updatedTask.id ? updatedTask : task)))
-    setEditingTask(null)
+  const handleEditTask = (updatedTask: Task | Omit<Task, "id">) => {
+    if ("id" in updatedTask) {
+      setTasks(tasks.map((task) => (task.id === updatedTask.id ? updatedTask : task)))
+      setEditingTask(null)
+    }
   }
 
   const handleDeleteTask = (id: string) => {

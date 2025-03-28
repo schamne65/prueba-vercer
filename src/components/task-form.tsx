@@ -11,7 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import type { Task } from "@/components/task-dashboard"
 
 interface TaskFormProps {
-  onSubmit: (task: any) => void
+  onSubmit: (task: Omit<Task, "id"> | Task) => void // Cambiado de "any" a un tipo más específico
   onCancel: () => void
   initialData?: Task
 }
