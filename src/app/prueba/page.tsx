@@ -1,6 +1,6 @@
 
 
-import {pruebaChe } from "@/app/query/route";
+import {pruebaChe } from "@/app/lib/action";
 
 export default async function PruebaPage() {
 

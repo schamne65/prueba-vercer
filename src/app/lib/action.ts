@@ -30,3 +30,13 @@ export async function createPrueba(
     return { message: "Error en la base de datos: no se pudo crear", errors: {} };
   }
 }
+
+
+
+export async function pruebaChe() {
+  const data = await sql 
+`
+    SELECT nombre, apellido, edad FROM prueba
+  `;
+  return data;
+}
