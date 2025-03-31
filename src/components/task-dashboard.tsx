@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -8,6 +8,9 @@ import { TaskList } from "@/components/task-list"
 import { TaskForm } from "@/components/task-form"
 import { PlusCircle, LogOut } from "lucide-react"
 import { useRouter } from "next/navigation"
+import {  listInvoices } from "@/app/query/route"
+
+
 
 // Task type definition
 export type Task = {
@@ -48,6 +51,7 @@ const initialTasks: Task[] = [
 ]
 
 export function TaskDashboard() {
+  
   const [tasks, setTasks] = useState<Task[]>(initialTasks)// esta linea trae el array task con las tareas predefinidas
   const [isAddingTask, setIsAddingTask] = useState(false) // por si se esta agregando una tarea
   const [editingTask, setEditingTask] = useState<Task | null>(null)
@@ -76,8 +80,10 @@ export function TaskDashboard() {
   const handleLogout = () => {
     router.push("/")
   }
-
+ 
   return (
+
+
     <div className="min-h-screen bg-gradient-to-br from-slate-100 to-slate-200 p-4 md:p-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-8 flex items-center justify-between">
