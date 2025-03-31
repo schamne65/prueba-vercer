@@ -1,8 +1,3 @@
-import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
-
-
-
 
 import postgres from 'postgres';
 
@@ -13,9 +8,6 @@ export async function pruebaChe() {
 `
     SELECT nombre, apellido, edad FROM prueba
   `;
-
-  
-
 	return data;
 }
 

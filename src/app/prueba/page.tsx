@@ -1,5 +1,5 @@
 
-import { useRouter } from "next/navigation";
+
 import {pruebaChe } from "@/app/query/route";
 
 export default async function PruebaPage() {
