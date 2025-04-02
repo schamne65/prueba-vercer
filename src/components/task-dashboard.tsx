@@ -62,7 +62,7 @@ export function TaskDashboard() {
   const [editingTask, setEditingTask] = useState<Task | null>(null)
   const router = useRouter()
 
-  const handleAddTask = (newTask: Omit<Task, "id">) => {
+  /*const handleAddTask = (newTask: Omit<Task, "id">) => {
     const task = {
       ...newTask,
       id: Date.now().toString(),
@@ -77,7 +77,7 @@ export function TaskDashboard() {
       setEditingTask(null)
     }
   }
-
+*/
   const handleDeleteTask = (id: string) => {
     setTasks(tasks.filter((task) => task.id !== id))
   }
