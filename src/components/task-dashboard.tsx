@@ -8,19 +8,24 @@ import { TaskList } from "@/components/task-list"
 import { TaskForm } from "@/components/task-form"
 import { PlusCircle, LogOut } from "lucide-react"
 import { useRouter } from "next/navigation"
+import { TaskForm2 } from "@/app/dashboard/create/page"
 
 
 
 
 // Task type definition
 export type Task = {
+ 
   id: string
   title: string
   description: string
   dueDate: string
   priority: "low" | "medium" | "high"
   status: "pending" | "in-progress" | "completed"
+  
+ 
 }
+
 
 // Sample initial tasks
 const initialTasks: Task[] = [
@@ -108,13 +113,10 @@ export function TaskDashboard() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <TaskForm
-                onSubmit={editingTask ? handleEditTask : handleAddTask}
-                onCancel={() => {
-                  setIsAddingTask(false)
-                  setEditingTask(null)
-                }}
-                initialData={editingTask || undefined}
+              <TaskForm2
+               
+              
+                
               />
             </CardContent>
           </Card>
@@ -124,7 +126,7 @@ export function TaskDashboard() {
               <h2 className="text-2xl font-semibold text-slate-800">Mis Tareas</h2>
               <Button onClick={() => setIsAddingTask(true)} className="gap-2">
                 <PlusCircle className="h-4 w-4" />
-                Nueva Tarea
+                Nueva Tarea 1
               </Button>
             </div>
 

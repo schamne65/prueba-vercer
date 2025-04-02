@@ -40,3 +40,44 @@ export async function pruebaChe() {
   `;
   return data;
 }
+
+
+export type Task = {
+  id: string;
+  title: string;
+  description: string;
+  dueDate: string;
+  priority: "low" | "medium" | "high";
+  status: "pending" | "in-progress" | "completed";
+};
+export type TaskState = {
+  errors: Partial<Record<keyof Task, string[]>>;  // ✅ Siempre un objeto
+  message: string;
+};
+
+
+
+export async function createTarea(
+  prevState: TaskState,
+  formData: FormData
+) {
+  try {
+   
+    const title = formData.get("title") as string;
+    const description = formData.get("description") as string;
+    const dueDate = formData.get("dueDate") as string;
+    const priority = formData.get("priority") as string;
+    const status = formData.get("status") as string;
+
+    // Insertar en la base de datos
+    await sql`
+      INSERT INTO tareas (titulo, description, fechaVencimiento, prioridad, estado) 
+      VALUES (${title}, ${description}, ${dueDate}, ${priority}, ${status})
+    `;
+
+    return { message: "Tarea creada con éxito", errors: {} };
+  } catch (error) {
+    console.log(error);
+    return { message: "Error en la base de datos: no se pudo crear la tarea", errors: {} };
+  }
+}
