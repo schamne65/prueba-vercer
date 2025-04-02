@@ -8,7 +8,7 @@ import { TaskList } from "@/components/task-list"
 //import { TaskForm } from "@/components/task-form"
 import { PlusCircle, LogOut } from "lucide-react"
 import { useRouter } from "next/navigation"
-import { TaskForm2 } from "@/app/dashboard/create/page"
+import { TaskForm2 } from "@/components/task-form-2"
 
 
 

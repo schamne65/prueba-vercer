@@ -10,7 +10,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { useActionState } from "react";
 import {  createTarea , TaskState} from "@/app/lib/action";
 
-export function TaskForm2() {
+export  function TaskForm2() {
     const initialState: TaskState = { message: "", errors: {} }; 
 
   const [state, formAction] = useActionState(createTarea, initialState);
