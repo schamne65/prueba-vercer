@@ -18,9 +18,7 @@ export function TaskForm2() {
 
   const [state, formAction] = useActionState(createTarea, initialState);
 
-  const handleSelectChange = (name: string, value: string) => {
-    
-  }
+
 
   return (
     <form  action={formAction} className="space-y-4">
@@ -75,9 +73,7 @@ export function TaskForm2() {
 
         <div className="space-y-2">
           <Label htmlFor="status">Estado</Label>
-          <Select
-          onValueChange={(value) => handleSelectChange("status", value as Task["status"])}
-          >
+          <Select >
             <SelectTrigger id="status">
               <SelectValue placeholder="Seleccionar estado" />
             </SelectTrigger>
