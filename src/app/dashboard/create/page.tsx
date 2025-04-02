@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useActionState } from "react";
-import { Task, createTarea , TaskState} from "@/app/lib/action";
+import {  createTarea , TaskState} from "@/app/lib/action";
 
 
 
@@ -73,7 +73,7 @@ export function TaskForm2() {
 
         <div className="space-y-2">
           <Label htmlFor="status">Estado</Label>
-          <Select >
+       {/*  <Select >
             <SelectTrigger id="status">
               <SelectValue placeholder="Seleccionar estado" />
             </SelectTrigger>
@@ -82,8 +82,12 @@ export function TaskForm2() {
               <SelectItem value="in-progress">En Progreso</SelectItem>
               <SelectItem value="completed">Completada</SelectItem>
             </SelectContent>
-          </Select>
+          </Select>*/}
         </div>
+        <select name="status" id="" className= "focus:bg-accent focus:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground relative flex w-full cursor-default items-center gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2">
+            <option value="baja">pendiente</option>
+            <option value="media"> realizando</option>
+          </select>
       </div>
 
       <div className="flex justify-end gap-2 pt-4">
